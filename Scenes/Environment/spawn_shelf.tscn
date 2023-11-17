@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://c83j0pwm3wlww"]
+
+[ext_resource type="Script" path="res://Scripts/spawn_shelf.gd" id="1_tdsqr"]
+[ext_resource type="PackedScene" uid="uid://c8sbo2nuaw12c" path="res://block_3.tscn" id="2_31acu"]
+[ext_resource type="PackedScene" uid="uid://c73pru6v7juol" path="res://block_5.tscn" id="3_526fm"]
+[ext_resource type="PackedScene" uid="uid://cxt2u5xlu5750" path="res://block_7.tscn" id="4_42v1l"]
+
+[node name="SpawnShelf" type="Marker3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3343, 0, -4.81995)
+script = ExtResource("1_tdsqr")
+block1 = ExtResource("2_31acu")
+block2 = ExtResource("3_526fm")
+block3 = ExtResource("4_42v1l")

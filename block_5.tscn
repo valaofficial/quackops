@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c73pru6v7juol"]
+
+[ext_resource type="Texture2D" uid="uid://b6jnot20c544f" path="res://Assets/Textures/Green/texture_13.png" id="1_23xtn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qem3g"]
+albedo_texture = ExtResource("1_23xtn")
+
+[sub_resource type="BoxMesh" id="BoxMesh_cwfxr"]
+size = Vector3(5, 3, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kjp4w"]
+size = Vector3(5, 3, 1)
+
+[node name="Block5" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mass = 50.0
+inertia = Vector3(50, 50, 50)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_qem3g")
+mesh = SubResource("BoxMesh_cwfxr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_kjp4w")
