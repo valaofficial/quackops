@@ -13,11 +13,11 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_7o05y"]
 material = SubResource("StandardMaterial3D_babaq")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8vqn7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8aoh0"]
 albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_27u18"]
-material = SubResource("StandardMaterial3D_8vqn7")
+material = SubResource("StandardMaterial3D_8aoh0")
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_eano5")

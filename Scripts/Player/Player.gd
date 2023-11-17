@@ -51,11 +51,9 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	if Input.is_action_pressed("dash"):
-		if can_dash:
-			defaut_speed = dash_speed
-			can_dash = false
-			dash_timer.start()
+
+	handle_inputs()
+	
 			
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -63,16 +61,22 @@ func _physics_process(delta):
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * defaut_speed
+		$AnimationPlayer.play("riflerun")
 		velocity.z = direction.z * defaut_speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, defaut_speed)
 		velocity.z = move_toward(velocity.z, 0, defaut_speed)
 
-	handle_inputs()
 	
 	move_and_slide()
 	
 func handle_inputs():
+	if Input.is_action_pressed("dash"):
+		if can_dash:
+			defaut_speed = dash_speed
+			can_dash = false
+			dash_timer.start()
+			
 	if Input.is_action_pressed("attack"):
 		shoot()
 

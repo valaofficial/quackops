@@ -1,8 +1,8 @@
 [gd_scene load_steps=30 format=3 uid="uid://sb5xqlwy67xx"]
 
 [ext_resource type="Texture2D" uid="uid://1he1lwt3n80o" path="res://Assets/Textures/Dark/texture_03.png" id="1_ywoug"]
-[ext_resource type="PackedScene" uid="uid://x1okndp2kjsm" path="res://Scenes/Entities/player.tscn" id="3_8dckw"]
 [ext_resource type="PackedScene" uid="uid://cknxpxe68aelo" path="res://Scenes/Environment/elevator_coliision.tscn" id="3_dtanj"]
+[ext_resource type="PackedScene" uid="uid://bhw0j5nu3ihha" path="res://Scenes/Entities/playerduck.tscn" id="3_n22uc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xn0v5"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -198,9 +198,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000962257, 0, -0.0774479)
 material_override = SubResource("StandardMaterial3D_xkfh2")
 mesh = SubResource("BoxMesh_sqgx5")
 
-[node name="Player" parent="." instance=ExtResource("3_8dckw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.119969, 1, -7.77048)
-
 [node name="ElevatorColiision" parent="." instance=ExtResource("3_dtanj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.235835, 2.18553, -12.5693)
 
@@ -209,3 +206,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.235835, 2.18553, -12.5693)
 [node name="Tables" type="Node" parent="."]
 
 [node name="Shelves" type="Node" parent="."]
+
+[node name="duck" parent="." instance=ExtResource("3_n22uc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.42926, 0.100098, -8.94626)

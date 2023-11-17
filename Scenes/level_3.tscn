@@ -1,10 +1,10 @@
 [gd_scene load_steps=31 format=3 uid="uid://duorg7ivn3pn8"]
 
 [ext_resource type="Texture2D" uid="uid://1he1lwt3n80o" path="res://Assets/Textures/Dark/texture_03.png" id="1_pwfqt"]
-[ext_resource type="PackedScene" uid="uid://x1okndp2kjsm" path="res://Scenes/Entities/player.tscn" id="2_7qe23"]
 [ext_resource type="PackedScene" uid="uid://cknxpxe68aelo" path="res://Scenes/Environment/elevator_coliision.tscn" id="3_446xi"]
 [ext_resource type="PackedScene" uid="uid://c4n2wf7o8m7xa" path="res://Scenes/Environment/spawn_refresments.tscn" id="4_6cw6r"]
 [ext_resource type="PackedScene" uid="uid://c83j0pwm3wlww" path="res://Scenes/Environment/spawn_shelf.tscn" id="5_syfua"]
+[ext_resource type="PackedScene" uid="uid://bhw0j5nu3ihha" path="res://Scenes/Entities/playerduck.tscn" id="6_dafbx"]
 [ext_resource type="PackedScene" uid="uid://bxug6llq1c6hv" path="res://Scenes/Environment/spawn_tables.tscn" id="6_tdi12"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cfbgf"]
@@ -205,9 +205,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000962257, 0, -0.0774479)
 material_override = SubResource("StandardMaterial3D_fsuct")
 mesh = SubResource("BoxMesh_0xdcc")
 
-[node name="Player" parent="." instance=ExtResource("2_7qe23")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.119969, 1, -7.05503)
-
 [node name="ElevatorColiision" parent="." instance=ExtResource("3_446xi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95917, -11.2328)
 
@@ -264,3 +261,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.83773, 0.0999756, 15.1467)
 
 [node name="SpawnTables12" parent="Tables" instance=ExtResource("6_tdi12")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7965, 0.0999756, 15.1467)
+
+[node name="duck" parent="." instance=ExtResource("6_dafbx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.42926, 0.100098, -8.94626)

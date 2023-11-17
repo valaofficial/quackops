@@ -1,10 +1,10 @@
 [gd_scene load_steps=24 format=3 uid="uid://bt42ctpydykem"]
 
 [ext_resource type="Texture2D" uid="uid://1he1lwt3n80o" path="res://Assets/Textures/Dark/texture_03.png" id="2_5iwxu"]
-[ext_resource type="PackedScene" uid="uid://x1okndp2kjsm" path="res://Scenes/Entities/player.tscn" id="3_jpphp"]
 [ext_resource type="PackedScene" uid="uid://cknxpxe68aelo" path="res://Scenes/Environment/elevator_coliision.tscn" id="3_ujeyw"]
 [ext_resource type="PackedScene" uid="uid://c83j0pwm3wlww" path="res://Scenes/Environment/spawn_shelf.tscn" id="4_s15bc"]
 [ext_resource type="PackedScene" uid="uid://c4n2wf7o8m7xa" path="res://Scenes/Environment/spawn_refresments.tscn" id="5_rorjh"]
+[ext_resource type="PackedScene" uid="uid://bhw0j5nu3ihha" path="res://Scenes/Entities/playerduck.tscn" id="6_iaejy"]
 [ext_resource type="PackedScene" uid="uid://bxug6llq1c6hv" path="res://Scenes/Environment/spawn_tables.tscn" id="6_obil1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2rj0h"]
@@ -140,9 +140,6 @@ shape = SubResource("BoxShape3D_hvcro")
 material_override = SubResource("StandardMaterial3D_j3ete")
 mesh = SubResource("BoxMesh_nj3pl")
 
-[node name="Player" parent="." instance=ExtResource("3_jpphp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.111095, 1, -7.19719)
-
 [node name="ElevatorColiision" parent="." instance=ExtResource("3_ujeyw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16775, 2.06079, -11.8324)
 
@@ -187,3 +184,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3469, 0.1, -10.5195)
 
 [node name="SpawnRefresments2" parent="Refreshments" instance=ExtResource("5_rorjh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 23.3349, 0.1, 17.9304)
+
+[node name="duck" parent="." instance=ExtResource("6_iaejy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

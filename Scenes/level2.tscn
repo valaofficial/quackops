@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cknxpxe68aelo" path="res://Scenes/Environment/elevator_coliision.tscn" id="3_buq5g"]
 [ext_resource type="PackedScene" uid="uid://c4n2wf7o8m7xa" path="res://Scenes/Environment/spawn_refresments.tscn" id="4_qabkd"]
 [ext_resource type="PackedScene" uid="uid://c83j0pwm3wlww" path="res://Scenes/Environment/spawn_shelf.tscn" id="5_8qwxw"]
-[ext_resource type="PackedScene" uid="uid://x1okndp2kjsm" path="res://Scenes/Entities/player.tscn" id="5_h7pff"]
+[ext_resource type="PackedScene" uid="uid://bhw0j5nu3ihha" path="res://Scenes/Entities/playerduck.tscn" id="6_pol3e"]
 [ext_resource type="PackedScene" uid="uid://bxug6llq1c6hv" path="res://Scenes/Environment/spawn_tables.tscn" id="6_u4utd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_26iua"]
@@ -189,9 +189,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000962257, 0, -0.0774479)
 material_override = SubResource("StandardMaterial3D_x82yi")
 mesh = SubResource("BoxMesh_2fg73")
 
-[node name="Player" parent="." instance=ExtResource("5_h7pff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031991, 1, -7.7265)
-
 [node name="ElevatorColiision" parent="." instance=ExtResource("3_buq5g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0631647, 2.06079, -11.8324)
 
@@ -230,3 +227,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.99
 
 [node name="SpawnTables4" parent="Tables" instance=ExtResource("6_u4utd")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.9927, 0.0999756, 13.2083)
+
+[node name="duck" parent="." instance=ExtResource("6_pol3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.42926, 0.100098, -8.94626)
