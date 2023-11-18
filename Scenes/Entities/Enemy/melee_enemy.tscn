@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://dy53q5psn0pdi"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy/enemy.gd" id="1_gvbrf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k4v56"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hrrv1"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tsbpf"]
+material = SubResource("StandardMaterial3D_hrrv1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_147ne"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3knn8"]
+material = SubResource("StandardMaterial3D_147ne")
+
+[node name="MeleeEnemy" type="CharacterBody3D" groups=["Enemies", "MeleeEnemy"]]
+script = ExtResource("1_gvbrf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_k4v56")
+
+[node name="Body" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("CapsuleMesh_tsbpf")
+skeleton = NodePath("../../CollisionShape3D")
+
+[node name="Eyes" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.648801, 0, 0, 0, 0.259154, 0, 0, 0, 0.438841, 0, 0.46592, -0.288339)
+mesh = SubResource("BoxMesh_3knn8")
+skeleton = NodePath("../..")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
+height = 0.5
+radius = 1.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout" flags=18]
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed" flags=18]

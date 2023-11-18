@@ -23,7 +23,7 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_3gh8g"]
 material = SubResource("StandardMaterial3D_8ads6")
 
-[node name="Enemy" type="CharacterBody3D" groups=["Enemies"]]
+[node name="Enemy" type="CharacterBody3D" groups=["Enemies", "ShooterEnemy"]]
 script = ExtResource("1_q8asb")
 enemy_bullet = ExtResource("2_i0bid")
 

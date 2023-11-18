@@ -65,6 +65,7 @@ func _physics_process(delta):
 		velocity.z = direction.z * defaut_speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, defaut_speed)
+		$AnimationPlayer.play("rifleidle")
 		velocity.z = move_toward(velocity.z, 0, defaut_speed)
 
 	
@@ -78,13 +79,15 @@ func handle_inputs():
 			dash_timer.start()
 			
 	if Input.is_action_pressed("attack"):
+#		if velocity == Vector3.ZERO:
+#			$AnimationPlayer.play("riflestand")
 		shoot()
 
 func shoot():
 	if can_shoot:
 		var new_bullet = player_bullet.instantiate()
 		new_bullet.speed = muzzle_speed
-		new_bullet.global_transform = $Body/Muzzle.global_transform
+		new_bullet.global_transform = $Body/Armature/Skeleton3D/Muzzle.global_transform
 		var scene_root = get_tree().get_root().get_children()[0]
 		scene_root.add_child(new_bullet)
 		can_shoot = false

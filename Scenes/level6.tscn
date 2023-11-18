@@ -1,8 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://sb5xqlwy67xx"]
+[gd_scene load_steps=31 format=3 uid="uid://sb5xqlwy67xx"]
 
 [ext_resource type="Texture2D" uid="uid://1he1lwt3n80o" path="res://Assets/Textures/Dark/texture_03.png" id="1_ywoug"]
 [ext_resource type="PackedScene" uid="uid://cknxpxe68aelo" path="res://Scenes/Environment/elevator_coliision.tscn" id="3_dtanj"]
 [ext_resource type="PackedScene" uid="uid://bhw0j5nu3ihha" path="res://Scenes/Entities/playerduck.tscn" id="3_n22uc"]
+[ext_resource type="PackedScene" uid="uid://b6ydyb22gf86e" path="res://Scenes/Entities/Enemy/club_duck.tscn" id="5_t7lwq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xn0v5"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -209,3 +210,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.235835, 2.18553, -12.5693)
 
 [node name="duck" parent="." instance=ExtResource("3_n22uc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.42926, 0.100098, -8.94626)
+
+[node name="ClubDuck" parent="." instance=ExtResource("5_t7lwq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9532, 0.0999756, 6.39727)
