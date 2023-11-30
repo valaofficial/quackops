@@ -1,11 +1,11 @@
 extends Node3D
 
-@export var scene1: String
-@export var scene2: String
-@export var scene3: String
-@export var scene4: String
-@export var scene5: String
-@export var scene6: String
+@export var scene1 = "res://Scenes/level2.tscn"
+@export var scene2 = "res://Scenes/level4.tscn"
+@export var scene3 = "res://Scenes/level5.tscn"
+@export var scene4 = "res://Scenes/level6.tscn"
+@export var scene5 = "res://Scenes/level.tscn"
+@export var scene6 = "res://Scenes/level_3.tscn"
 
 
 func get_random_scene(index):
@@ -31,12 +31,13 @@ func select_random_scene():
 
 
 func _on_area_3d_body_entered(body):
-	var current_scene = get_tree().current_scene.scene_file_path
-	if body.is_in_group("Player"):
-		var next_scene = select_random_scene()
-		if next_scene == current_scene:
-			next_scene = select_random_scene()
-			get_tree().change_scene_to_file(next_scene)
-		else:
-			get_tree().change_scene_to_file(next_scene)
+	if WorldControl.AllEnemiesKilled == true:
+		var current_scene = get_tree().current_scene.scene_file_path
+		if body.is_in_group("Player"):
+			var next_scene = select_random_scene()
+			if next_scene == current_scene:
+				next_scene = select_random_scene()
+				get_tree().change_scene_to_file(next_scene)
+			else:
+				get_tree().change_scene_to_file(next_scene)
 			

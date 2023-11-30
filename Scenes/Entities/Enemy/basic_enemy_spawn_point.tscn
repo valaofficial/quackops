@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dew11531onu1k"]
+[gd_scene load_steps=6 format=3 uid="uid://dew11531onu1k"]
 
 [ext_resource type="Script" path="res://Scripts/SpawnPoint.gd" id="1_p7qy8"]
-[ext_resource type="PackedScene" uid="uid://duum046f7odqa" path="res://Scenes/Entities/Enemy/enemy.tscn" id="2_ahc6l"]
+[ext_resource type="PackedScene" uid="uid://b6ydyb22gf86e" path="res://Scenes/Entities/Enemy/club_duck.tscn" id="2_ia6xt"]
+[ext_resource type="PackedScene" uid="uid://ck3pefbk8mb06" path="res://Scenes/Entities/Enemy/melee_duck.tscn" id="3_5cm8h"]
+[ext_resource type="PackedScene" uid="uid://vq66ethexp0a" path="res://Scenes/Entities/Enemy/rifle_enemy.tscn" id="4_ixdor"]
+[ext_resource type="PackedScene" uid="uid://dyxsw37ptuww" path="res://Scenes/Entities/Enemy/pistol_enemy.tscn" id="5_86etx"]
 
-[node name="BasicEnemySpawnPoint" type="Marker3D"]
+[node name="BasicEnemySpawnPoint" type="Marker3D" groups=["EnemySpawner"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.756, 1.16546, 0)
 script = ExtResource("1_p7qy8")
-Enemy = ExtResource("2_ahc6l")
+ClubDuck = ExtResource("2_ia6xt")
+PunchDuck = ExtResource("3_5cm8h")
+RifleDuck = ExtResource("4_ixdor")
+PistolDuck = ExtResource("5_86etx")

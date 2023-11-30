@@ -17,7 +17,8 @@ var is_attacking = false
 func _ready():
 	speed = set_enemy_speed()
 	call_deferred("getnav")
-	timer.wait_time = set_enemy_firerate()
+	if is_in_group("ShooterEnemy"):
+		timer.wait_time = set_enemy_firerate()
 	enemy_hp = set_enemy_health()
 
 func _physics_process(_delta):
@@ -32,17 +33,24 @@ func _physics_process(_delta):
 	
 	
 	if is_in_group("ShooterEnemy"):
-		if global_position.distance_to(player_position) <= 12:
+		if global_position.distance_to(player_position) <= 5:
 			new_velocity = direction * Vector3(randi_range(1,2), 0, randi_range(1,2)) * speed * -1	
+			
 			if is_in_group("PistolDuck"):
 				$AnimationPlayer.play("pistolwalkback")
-		elif  global_position.distance_to(player_position) <= 15:
+				
+			if is_in_group("RifleDuck"):
+				$AnimationPlayer.play_backwards("riflerun")
+				
+		elif  global_position.distance_to(player_position) <= 10:
 			new_velocity = Vector3.ZERO
-		
-		if global_position.distance_to(player_position) <= 20:
 			shoot()
-		
-		if is_in_group("RifleEnemy"):
+			
+		if is_in_group("PistolDuck"):
+			if velocity != Vector3.ZERO:
+				$AnimationPlayer.play("pistolwalk")
+				
+		if is_in_group("RifleDuck"):
 			if velocity != Vector3.ZERO:
 				$AnimationPlayer.play("riflerun")
 			
@@ -50,7 +58,7 @@ func _physics_process(_delta):
 		if velocity != Vector3.ZERO:
 			$AnimationPlayer.play("run")
 			
-		if global_position.distance_to(player_position) < 3:
+		if global_position.distance_to(player_position) < 2:
 			new_velocity = Vector3.ZERO
 			attack()
 			
@@ -58,7 +66,7 @@ func _physics_process(_delta):
 		if velocity != Vector3.ZERO:
 			$AnimationPlayer.play("run")
 			
-		if global_position.distance_to(player_position) < 4:
+		if global_position.distance_to(player_position) < 2:
 			new_velocity = Vector3.ZERO
 			attack()
 	
@@ -111,11 +119,11 @@ func attack():
 
 func set_enemy_speed():
 	if is_in_group("MeleeEnemy"):
-		return 6
+		return 2
 	elif is_in_group("ShooterEnemy"):
-		return 10
+		return 3
 	elif is_in_group("ClubDuck"):
-		return 4
+		return 1
 
 func set_enemy_health():
 	if is_in_group("MeleeEnemy"):
@@ -129,7 +137,7 @@ func set_enemy_firerate():
 	if is_in_group("PistolDuck"):
 		return 1.35
 	elif is_in_group("RifleDuck"):
-		return .5
+		return .25
 
 #Signals
 func _on_navigation_agent_3d_velocity_computed(safe_velocity):

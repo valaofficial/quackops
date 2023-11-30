@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/level.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+WorldControl="*res://Scripts/WorldControl.gd"
+
 [display]
 
 window/size/mode=2

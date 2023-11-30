@@ -1,12 +1,3 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4n2wf7o8m7xa"]
+[gd_scene format=3 uid="uid://c4n2wf7o8m7xa"]
 
-[ext_resource type="Script" path="res://Scripts/spawn_refresments.gd" id="1_7wv1s"]
-[ext_resource type="PackedScene" uid="uid://3ghgre18x230" path="res://block_9.tscn" id="2_glwl0"]
-[ext_resource type="PackedScene" uid="uid://cvlgt7rdmkdc7" path="res://block_2.tscn" id="3_uppxr"]
-[ext_resource type="PackedScene" uid="uid://c3pt7egnd5lsf" path="res://block_8.tscn" id="4_vmtud"]
-
-[node name="SpawnRefresments" type="Marker3D"]
-script = ExtResource("1_7wv1s")
-block1 = ExtResource("2_glwl0")
-block2 = ExtResource("3_uppxr")
-block3 = ExtResource("4_vmtud")
+[node name="SpawnRefresments" type="Marker3D" groups=["ExtrasSpawnPoints"]]
